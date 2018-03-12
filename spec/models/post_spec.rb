@@ -9,6 +9,6 @@ RSpec.describe Post, type: :model do
 
   it "is invalid without a article" do 
   	article = Post.new(article: nil)
-  	expect(blog).not_to be_valid
+  	expect(article).not_to be_valid
   end
 end
