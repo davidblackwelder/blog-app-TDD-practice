@@ -28,7 +28,12 @@ ActiveRecord::Migration.maintain_test_schema!
 
 RSpec.configure do |config|
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
-  config.fixture_path = "#{::Rails.root}/spec/fixtures"
+
+  # This has been commented out because we have chosen to use factories instead of fixtures
+    #config.fixture_path = "#{::Rails.root}/spec/fixtures"
+    
+  # Allows us to omit FactoryBot.WHATEVER_METHOD from our tests. Now we can simply call: build(:blog) or create(:user) to instantiate objects from our Factories
+  config.include FactoryBot::Syntax::Methods
 
   #config.include FactoryBot::Syntax::Methods
 
