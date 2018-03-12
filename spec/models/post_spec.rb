@@ -16,4 +16,8 @@ RSpec.describe Post, type: :model do
   	blog = Post.new(title: "First Post", article: "Example text in the article")
   	expect(blog).to be_valid
   end
+
+  it "has a valid factory" do
+  	expect(FactoryBot.build(:blog)).to be_valid
+  end
 end
