@@ -20,4 +20,7 @@ RSpec.describe Post, type: :model do
   it "has a valid factory" do
   	expect(FactoryBot.build(:blog)).to be_valid
   end
+
+  it "belongs to User"
+  
 end

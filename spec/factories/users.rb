@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :user do
-    username = "MyString"
-    email = "MyString"
+    username { FFaker::Internet.user_name }
+    email  { FFaker::Internet.email }
   end
 end

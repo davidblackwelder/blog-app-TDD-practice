@@ -15,6 +15,8 @@ RSpec.describe User, type: :model do
 
 	it "is invalid without unique email"
 
+	it "has many posts"
+
 	it "is valid with required attributes" do
 		user = User.new(username: "David", email: "david@example.com")
 		expect(user).to be_valid
