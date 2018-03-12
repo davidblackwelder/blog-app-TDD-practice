@@ -21,4 +21,8 @@ RSpec.describe User, type: :model do
 		user = User.new(username: "David", email: "david@example.com")
 		expect(user).to be_valid
 	end
+
+	it "has a valid factory" do 
+		expect(build(:user)).to be_valid
+	end
 end
