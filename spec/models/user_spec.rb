@@ -1,16 +1,18 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
+
+	let(:user) { build(:user) }
 	
 
 	it "is invalid without a username" do
-		user = User.new(username: nil)
+		user.username = nil
 		expect(user).not_to be_valid
 	end
 
 	it "is invalid without a email" do 
-		email = User.new(email: nil)
-		expect(email).not_to be_valid
+		user.email = nil
+		expect(user).not_to be_valid
 	end
 
 	it "is invalid without unique email"
@@ -18,11 +20,12 @@ RSpec.describe User, type: :model do
 	it "has many posts"
 
 	it "is valid with required attributes" do
-		user = User.new(username: "David", email: "david@example.com")
+		user.username = "David"
+		user.email = "david@example.com"
 		expect(user).to be_valid
 	end
 
 	it "has a valid factory" do 
-		expect(build(:user)).to be_valid
+		expect(user).to be_valid
 	end
 end
