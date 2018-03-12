@@ -15,9 +15,9 @@ RSpec.describe User, type: :model do
 		expect(user).not_to be_valid
 	end
 
-	it "is invalid without unique email"
-
-	it "has many posts"
+	it "has many posts" do 
+		expect(User.reflect_on_association(:posts).macro).to eq(:has_many)
+	end
 
 	it "is valid with required attributes" do
 		user.username = "David"

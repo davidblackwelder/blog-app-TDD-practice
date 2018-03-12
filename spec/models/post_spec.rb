@@ -12,15 +12,12 @@ RSpec.describe Post, type: :model do
   	expect(article).not_to be_valid
   end
 
-  it "is valid with required attributes" do 
-  	blog = Post.new(title: "First Post", article: "Example text in the article")
-  	expect(blog).to be_valid
-  end
-
   it "has a valid factory" do
   	expect(FactoryBot.build(:blog)).to be_valid
   end
 
-  it "belongs to User"
-  
+  it "belongs to User" do 
+  	expect(Post.reflect_on_association(:user).macro).to eq(:belongs_to)
+  end
+
 end
